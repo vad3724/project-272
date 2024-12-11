@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdf
+  labels:
+    app: sdf
+spec:
+  selector:
+    matchLabels:
+      app: sdf
+  template:
+    metadata:
+      labels:
+        app: sdf
+    spec:
+      containers:
+        - name: sdf
+          image: karthequian/helloworld:latest
+          ports:
+            - containerPort: 80
+              name: http
